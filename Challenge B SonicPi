@@ -1,8 +1,8 @@
 #in progress#
 
 2.times do
-  sample :drum_snare_soft
-  sleep 2
+  sample :drum_snare_hard
+  sleep 4
 end
 sleep 0.5
 4.times do
@@ -21,7 +21,7 @@ live_loop :three do
   sample :drum_cymbal_closed
   sleep 0.5
 end
-sleep 4
+sleep 8
 sample :drum_splash_hard, sustain: 3
 sample :drum_cymbal_hard
 sample :drum_cowb
