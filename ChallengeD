@@ -49,8 +49,6 @@ live_loop:background_notes do
   sleep 1
   play:E4, amp: 0.25
   sleep 1
-  
-  
   5.times do
     play:E3, amp: 1
     sleep 1
