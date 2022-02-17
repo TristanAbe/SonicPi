@@ -1,5 +1,5 @@
 live_loop :zelda do
-  with_fx :bitcrusher do
+  with_fx :autotuner do
     use_bpm 120
     play :b4
     sleep 2
@@ -29,5 +29,37 @@ live_loop :zelda do
     sleep 2
     play :c5
     sleep 1
+  end
+end
+
+live_loop :ganon do
+  sample :bd_haus
+  sleep 0.5
+end
+#21 sleeps
+define :link do
+  use_bpm 120
+  with_synth :piano do
+    with_fx :pan do
+      play 64
+      sleep 2
+      play 65
+      sleep 1
+      play 60
+      sleep 5
+      play 65
+    end
+  end
+end
+link
+sleep 4
+use_bpm 120
+with_synth :pluck do
+  with_fx :bitcrusher do
+    play 70
+    sleep 2
+    play 71
+    sleep 1
+    play 68
   end
 end
