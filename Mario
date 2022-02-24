@@ -1,0 +1,89 @@
+intro = "C:/Users/tristan_abraham/Downloads/mario_sounds-20220222T191514Z-001/mario_sounds/mario_intro.wav"
+jump = "C:/Users/tristan_abraham/Downloads/mario_sounds-20220222T191514Z-001/mario_sounds/jump.wav"
+mush ="C:/Users/tristan_abraham/Downloads/mario_sounds-20220222T191514Z-001/mario_sounds/mushroom.wav"
+beat ="C:/Users/tristan_abraham/Downloads/mario_sounds-20220222T191514Z-001/mario_sounds/mario_beat.wav"
+pipe ="C:/Users/tristan_abraham/Downloads/mario_sounds-20220222T191514Z-001/mario_sounds/pipe.wav"
+coin ="C:/Users/tristan_abraham/Downloads/mario_sounds-20220222T191514Z-001/mario_sounds/coin.wav"
+oneup ="C:/Users/tristan_abraham/Downloads/mario_sounds-20220222T191514Z-001/mario_sounds/oneup.wav"
+use_bpm 180
+use_synth :chipbass
+
+sample intro
+sleep 8
+
+play :e4
+sleep 0.5
+play :e4
+sleep 1
+play :e4
+sleep 1
+play :c4
+sleep 0.5
+play :e4
+sleep 1
+play :g4
+sleep 2
+play :g3
+sleep 2
+
+live_loop :hat do
+  4.times do
+    play :c4
+    sleep 1.5
+    play :g3
+    sleep 1.5
+    play :e3
+    sleep 1.5
+    play :a3
+    sleep 1
+    play :b3
+    sleep 1
+    play :bb3
+    sleep 0.5
+    play :a3
+    sleep 1
+  end
+  stop
+end
+
+
+live_loop :cap do
+  4.times do
+    sample jump
+    sleep 1.5
+    sample mush
+    sleep 1.5
+    sample beat
+    sample coin
+    sleep 2
+    sample pipe
+    sleep 3
+  end
+  stop
+end
+
+sleep 32
+
+
+play :g3
+sleep 2/3.0
+sample oneup
+play :e4
+sleep 2/3.0
+play :g4
+sleep 2/3.0
+play :a4
+sleep 1
+play :f4
+sleep 0.5
+play :g4
+sleep 1
+play :e4
+sleep 1
+play :c4
+sleep 0.5
+play :d4
+sleep 0.5
+play :b3
+sleep 1
+sample pipe
