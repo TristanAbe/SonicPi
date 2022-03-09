@@ -1,0 +1,14 @@
+use_bpm 160
+use_synth :saw
+i = 0
+strangerThings = ["c2","e2", "g2", "b2", "c3", "b2", "g2", "e2"]
+with_fx :distortion do
+  live_loop :st do
+    7.times do
+      play(strangerThings[i])
+      sleep 0.5
+      i = i + 1
+    end
+    i = 0
+  end
+end
