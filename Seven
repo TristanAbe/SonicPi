@@ -1,0 +1,15 @@
+use_bpm 120
+use_synth :fm
+use_synth_defaults sustain: 0.25
+i = 0
+sleeep = [1.5, 0.5, 0.75, 0.25, 0.5, 0.5, 2, 2]
+seven = ["e3", "e3", "g3", "e3", "d3", "c3", "b2"]
+live_loop :white_stripes do
+  8.times do
+    play(seven [i])
+    sleep(sleeep [i])
+    i = i + 1
+    sleep 1
+  end
+  i = 0
+end
