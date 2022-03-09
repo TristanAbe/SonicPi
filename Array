@@ -1,14 +1,14 @@
-use_bpm 160
-use_synth :saw
+use_bpm 120
+use_synth :fm
+use_synth_defaults sustain: 0.25
+notevar = [:e3, :e3, :g3, :e3, :r, :d3, :c3, :b2]
+sleepcount = [1.5, 0.5, 0.75, 0.25, 0.5, 0.5, 2, 2]
 i = 0
-strangerThings = ["c2","e2", "g2", "b2", "c3", "b2", "g2", "e2"]
-with_fx :distortion do
-  live_loop :st do
-    7.times do
-      play(strangerThings[i])
-      sleep 0.5
-      i = i + 1
-    end
-    i = 0
+live_loop :main_theme do
+  8.times do
+    play (notevar [i])
+    sleep (sleepcount [i])
+    index = index + 1
   end
+  i = 0
 end
