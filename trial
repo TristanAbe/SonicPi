@@ -1,0 +1,33 @@
+define :my_noise do
+  play 60, amp: 0.5
+  sleep 0.5
+  play 65
+  play 50, amp: 0.1
+  sleep 0.25
+  play 55, amp: 0.2
+  sleep 0.25
+  play 57, amp: 0.4, pan: 1
+  sleep 0.25
+  play 62, amp: 1, pan: -1
+  play 60, amp: 0.5
+  sleep 0.5
+  play 65
+  play 50, amp: 0.1
+  sleep 0.25
+  play 55, amp: 0.2
+  sleep 0.25
+  play 57, amp: 0.4, pan: 1
+  sleep 0.25
+  play 62, amp: 1, pan: -1
+  sleep 0.5
+  play 80, amp: 0.5, pan: -1
+  sleep 0.5
+  play 65
+  play 80, amp: 0.3, pan: 1
+  sleep 0.5
+end
+in_thread(name: :looper) do
+  loop do
+    my_noise
+  end
+end
