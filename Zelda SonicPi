@@ -1,37 +1,41 @@
 krab = "C:/Users/tristan_abraham/Downloads/Y2Mate.is - Kass' Theme (The Legend of Zelda Breath of the Wild OST)-XrvZrBCR6-A-160k-1646072368792.wav"
 use_bpm 104
-
+a = 7
+define :link do
+  play :b4, amp: 2
+  sleep 2
+  play :d5, amp: 1.5
+  sleep 2
+  play :a4, amp: 1.5
+  sleep 2
+  play :g4, amp: 2
+  sleep 0.5
+  play :a4, amp: 2
+  sleep 0.5
+  play :b4, amp: 1
+  sleep 2
+  play :d5, amp: 2
+  sleep 2
+  play :a4, amp: 1
+  sleep 4
+  play :b4, amp: 1
+  sleep 2
+  play :d5, amp: 1
+  sleep 2
+  play :a5, amp: 3
+  sleep 2
+  play :g5, amp: 2
+  sleep 0.5
+  play :d5, amp: 1
+  sleep 0.5
+  play :c5, amp: 1
+  sleep 2
+end
 live_loop :zelda do
   with_synth :piano do
     3.times do
-      play :b4, amp: 1
-      sleep 2
-      play :d5, amp: 1.5
-      sleep 2
-      play :a4, amp: 1.5
-      sleep 2
-      play :g4, amp: 2
-      sleep 0.5
-      play :a4, amp: 1
-      sleep 0.5
-      play :b4, amp: 1
-      sleep 2
-      play :d5, amp: 1
-      sleep 2
-      play :a4, amp: 1
-      sleep 4
-      play :b4, amp: 1
-      sleep 2
-      play :d5, amp: 1
-      sleep 2
-      play :a5, amp: 3
-      sleep 2
-      play :g5, amp: 1, fade: 3
-      sleep 0.5
-      play :d5, amp: 1, fade: 2
-      sleep 0.5
-      play :c5, amp: 1, fade: 1
-      sleep 2
+      play link
+      link = link - 1
     end
   end
   stop
@@ -52,4 +56,3 @@ live_loop :ganon do
   end
   stop
 end
-sleep 48
