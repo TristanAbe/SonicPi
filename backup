@@ -1,0 +1,118 @@
+song = "C:/Users/tristan_abraham/Downloads/transition.wav"
+krab = "C:/Users/tristan_abraham/Downloads/Y2Mate.is - Kass' Theme (The Legend of Zelda Breath of the Wild OST)-XrvZrBCR6-A-160k-1646072368792.wav"
+navi = "C:/Users/tristan_abraham/Downloads/navi_float.wav"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             #Never gonna give you upppp never gonna let you downnnn never gonna run around and desert youuuuu
+look ="C:/Users/tristan_abraham/Downloads/intro_navi.wav"
+use_bpm 150
+a = 3
+define :link do
+  play :b4, amp: a
+  sleep 2
+  play :d5, amp: a
+  sleep 2
+  play :a4, amp: a
+  sleep 2
+  play :g4, amp: a
+  sleep 0.5
+  play :a4, amp: a
+  sleep 0.5
+  play :b4, amp: a
+  sleep 2
+  play :d5, amp: a
+  sleep 2
+  play :a4, amp: a
+  sleep 4
+  play :b4, amp: a
+  sleep 2
+  play :d5, amp: a
+  sleep 2
+  play :a5, amp: a
+  sleep 2
+  play :g5, amp: a
+  sleep 0.5
+  play :d5, amp: a
+  sleep 0.5
+  play :c5, amp: a
+  sleep 2
+end
+live_loop :Fi do
+  3.times do
+    link
+    a = a - 1
+  end
+  stop
+  a = -1
+end
+sleep 24
+live_loop :water do
+  2.times do
+    sample krab, beat_stretch: 24
+    sleep 24
+  end
+  stop
+end
+sleep 24
+live_loop :ganon do
+  12.times do
+    sample :bd_haus
+    sleep 2
+  end
+  stop
+end
+
+sleep 18
+
+sample song
+sleep 80
+
+#Alvin was here
+
+sample navi, beat_stretch: 12
+sleep 8
+sample look, beat_stretch: 4
+sleep 4
+
+use_bpm 140
+use_synth :chipbass
+i = 0
+
+zelda = [:f4,:a4,:b4,:f4,:a4,:b4,:f4,:a4,:b4,:e5,:d5,:b4,:c5,:b4,:g4,:e4,:r,:d4,:e4,:g4,:e4]
+sleeep =  [0.5,0.5,1,0.5,0.5,1,0.5,0.5,0.5,0.5,1,0.5,0.5,0.5,0.5,2,1,0.5,0.5, 0.5,2]
+live_loop :rito do
+  2.times do
+    21.times do
+      play (zelda[i])
+      sleep (sleeep[i])
+      i = i + 1
+    end
+    i = 0
+  end
+  stop
+end
+
+define :goron do |a, b, c, d, e, f, g, h|
+  play a
+  sleep 0.5
+  play b
+  play c
+  sleep 0.5
+  play d
+  play e
+  sleep 0.5
+  play f
+  play g
+  sleep 0.5
+  play h
+end
+live_loop :tingle do
+  2.times do
+    goron :f3, :b3, :c3, :b3, :c3, :b3, :c3, :r
+    goron :f3, :b3, :c3, :b3, :c3, :b3, :c3, :r
+    goron :f3, :b3, :c3, :b3, :c3, :b3, :c3, :r
+    goron :f3, :b3, :c3, :b3, :c3, :b3, :c3, :r
+    goron :e3, :g3, :c3, :g3, :c3, :g3, :c3, :r
+    goron :e3, :g3, :c3, :g3, :c3, :g3, :c3, :r
+    goron :e3, :g3, :c3, :g3, :c3, :g3, :c3, :r
+    goron :e3, :g3, :c3, :g3, :c3, :g3, :c3, :e3
+  end
+  stop
+end
