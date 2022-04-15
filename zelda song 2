@@ -1,3 +1,5 @@
+navi = "C:/Users/tristan_abraham/Downloads/navi_float.wav"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             #Never gonna give you upppp never gonna let you downnnn never gonna run around and desert youuuuu
+look ="C:/Users/tristan_abraham/Downloads/intro_navi.wav"
 sample navi, beat_stretch: 12
 sleep 8
 sample look, beat_stretch: 4
