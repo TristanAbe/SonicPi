@@ -1,9 +1,8 @@
-navi = "C:/Users/tristan_abraham/Downloads/navi_float.wav"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             #Never gonna give you upppp never gonna let you downnnn never gonna run around and desert youuuuu
 look ="C:/Users/tristan_abraham/Downloads/intro_navi.wav"
+song = "C:/Users/tristan_abraham/Downloads/transition.wav"
+
 sample navi, beat_stretch: 12
-sleep 8
-sample look, beat_stretch: 4
-sleep 4
+sleep 14
 
 use_bpm 140
 use_synth :chipbass
@@ -22,7 +21,7 @@ live_loop :rito do
   end
   stop
 end
-
+#somethings might be out of sync due to both song 1 and song 2 being in the same buffer (the BPM switches three times) together they play fine#
 define :goron do |a, b, c, d, e, f, g, h|
   play a
   sleep 0.5
@@ -37,6 +36,7 @@ define :goron do |a, b, c, d, e, f, g, h|
   sleep 0.5
   play h
 end
+#array#
 live_loop :tingle do
   2.times do
     goron :f3, :b3, :c3, :b3, :c3, :b3, :c3, :r
@@ -50,3 +50,5 @@ live_loop :tingle do
   end
   stop
 end
+sleep 32
+sample song
